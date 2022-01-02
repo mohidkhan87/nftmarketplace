@@ -13,6 +13,10 @@ module.exports = {
       },
       boxShadow: {
         rounded: '0 0 13px 1px rgba( 0, 0, 0, 0.2 )'
+      },
+      transitionProperty: {
+        height: 'height'
+
       }
 
     }
