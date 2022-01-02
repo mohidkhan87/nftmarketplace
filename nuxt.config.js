@@ -1,6 +1,10 @@
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
+  target: 'static',
   ssr: false,
+  // router: {
+  //   base: '/nftmarketplace/'
+  // },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -21,6 +25,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/assets/sass/main.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
