@@ -9,7 +9,8 @@ module.exports = {
         greenish: '#01CDDF',
         skyBlue: '#01AEE5',
         borderBlue: '#459eba',
-        lightBlue: '#cfdee1'
+        lightBlue: '#cfdee1',
+        hoverBlue: '#205e6f'
       },
       boxShadow: {
         rounded: '0 0 13px 1px rgba( 0, 0, 0, 0.2 )'

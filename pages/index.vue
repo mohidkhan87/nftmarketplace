@@ -23,7 +23,7 @@ export default {
 .body{
   background-image: url('https://armoonia.app/static/media/bg_light.b87968b8.png');
   background-repeat: no-repeat;
-  /* background-position: center; */
+  /* background-position: left; */
   background-size: cover;
   background-color:  #044c62;
 }
