@@ -1,54 +1,29 @@
 <template>
-  <div class="lg:my-16 sm:my-12 my-5">
+  <div class="lg:py-40 sm:py-32 py-24">
     <Container>
       <div class="text-white">
         <h1 class="sm:text-3xl text-2xl font-semilight text-center">
           All Collections
         </h1>
-        <div class="relative w-max ml-auto lg:mt-10 mt-14 mb-14">
-          <button class="sm:w-72 w-64 min-w-full bg-transparent rounded-md outline-none border border-skyBlue py-2.5 px-5" @click="filterBox = !filterBox" @blur="filterBox = false">
+        <div class="relative sm:w-max w-full ml-auto lg:mt-10 mt-14 mb-10">
+          <button class="sm:w-72 w-full bg-transparent rounded-md outline-none border border-skyBlue py-2.5 px-5" @click="filterBox = !filterBox" @blur="filterBox = false">
             <div class="flex justify-between items-center gap-3 font-light">
               <div class="flex items-center gap-3">
                 <img src="@/assets/img/collection/filter.svg" alt="filter">
-                <span class="sm:block hidden">{{ selectedFilter }}</span>
-                <span v-if="selectedFilter.length > 20" class="sm:hidden block">{{ selectedFilter.substr(0, 20) }}...</span>
-                <span v-else class="sm:hidden block">{{ selectedFilter }}</span>
+                <!-- <span class="sm:block hidden">{{ selectedFilter }}</span> -->
+                <span v-if="selectedFilter.length > 23">{{ selectedFilter.substr(0, 23) }}...</span>
+                <!-- <span v-if="selectedFilter.length > 30" class="sm:hidden block text-sm">{{ selectedFilter }}</span> -->
+
+                <span v-else class="sm:text-base text-sm">{{ selectedFilter }}</span>
               </div>
               <img src="@/assets/img/collection/arrow-down.svg" alt="arrow" class="w-3">
             </div>
           </button>
           <!-- Filter box -->
           <transition name="fade">
-            <div v-if="filterBox" class="absolute top-full left-0 w-full transform translate-y-3 bg-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-lg rounded-md py-2.5 px-5 z-10">
-              <p class="cursor-pointer" @click="selectedFilter = 'Lorem'">
-                lorem
-              </p>
-              <p class="cursor-pointer" @click="selectedFilter = 'Lorem, ipsum.'">
-                Lorem, ipsum.
-              </p>
-              <p class="cursor-pointer" @click="selectedFilter = 'Lorem'">
-                lorem
-              </p>
-              <p class="cursor-pointer" @click="selectedFilter = 'Lorem, ipsum.'">
-                Lorem, ipsum.
-              </p>
-              <p class="cursor-pointer" @click="selectedFilter = 'Lorem'">
-                lorem
-              </p>
-              <p class="cursor-pointer" @click="selectedFilter = 'Lorem, ipsum.'">
-                Lorem, ipsum.
-              </p>
-              <p class="cursor-pointer" @click="selectedFilter = 'Lorem'">
-                lorem
-              </p>
-              <p class="cursor-pointer" @click="selectedFilter = 'Lorem, ipsum.'">
-                Lorem, ipsum.
-              </p>
-              <p class="cursor-pointer" @click="selectedFilter = 'Lorem'">
-                lorem
-              </p>
-              <p class="cursor-pointer" @click="selectedFilter = 'Lorem, ipsum.'">
-                Lorem, ipsum.
+            <div v-if="filterBox" class="absolute top-full left-0 w-full transform translate-y-3 bg-gray-500 sm:bg-opacity-30 bg-opacity-40 backdrop-filter backdrop-blur-2xl rounded-md overflow-hidden py-2 z-10">
+              <p v-for="(sort, idx) in sortOptions" :key="idx" :class="selectedFilter === sort.title && 'bg-hoverBlue'" class="cursor-pointer text-sm hover:bg-hoverBlue transition-all duration-150 leading-4 ease-linear py-2.5 px-5" @click="selectedFilter = sort.title">
+                {{ sort.title }}
               </p>
             </div>
           </transition>
@@ -64,8 +39,11 @@
                 <h2 class="text-lg font-semibold">
                   Harmoonies
                 </h2>
-                <div class="mx-3 sm:mx-5 lg:mx-7 2xl:mx-20 text-center leading-5">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium saepe tempore molestiae.
+                <!-- <div v-if="collection.detail.length > 105" class="collection-detail w-11/12 mx-auto sm:mx-5 lg:mx-7 2xl:mx-20 text-center h-16  leading-5 border overflow-hidden">
+                  {{ collection.detail }}...
+                </div> -->
+                <div class="collection-detail text-center h-16  leading-5">
+                  {{ collection.detail }}
                 </div>
                 <button class="bg-secondary hover:bg-lightBlue hover:text-secondary transition-all duration-150 ease-linear text-white rounded-md py-2.5 px-5 mt-2 sm:text-base text-sm font-medium">
                   Explore Collection
@@ -83,9 +61,11 @@
             <p class="sm:text-lg text-base font-light">
               Find out how to list your collection on Armoonia
             </p>
-            <button class="bg-white sm:py-3 py-2.5 px-6 text-skyBlue rounded-md font-medium sm:text-base text-sm shadow-rounded mt-5">
-              Learn More
-            </button>
+            <div class="bg-white shadow-rounded rounded-md mt-5">
+              <button class="gradient-btn sm:py-3 py-2.5 px-6 font-medium sm:text-base text-sm ">
+                Learn More
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -95,48 +75,100 @@
 <script>
 export default {
   data: () => ({
-    selectedFilter: 'Daily Volume (Low To High)',
+    selectedFilter: 'Daily Volume (Low to High)',
     filterBox: false,
+
     collections: [
       {
         id: 1,
         profile: 'profile.svg',
-        cover: 'cover.svg'
+        cover: 'cover.svg',
+        detail: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium saepe tempore molestiae. consectetur adipisicing elit. It an ntium saepe tempore molestiae.'
       },
       {
         id: 2,
         profile: 'profile1.svg',
-        cover: 'cover1.svg'
+        cover: 'cover1.svg',
+        detail: 'Lorem ipsum dolor sit amet. Accusantium saepe tempore molestiae.'
       },
       {
         id: 3,
         profile: 'profile2.svg',
-        cover: 'cover2.svg'
+        cover: 'cover2.svg',
+        detail: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium saepe tempore molestiae. consectetur adipisicing elit. Accusantium saepe tempore molestiae.'
       },
       {
         id: 4,
         profile: 'profile.svg',
-        cover: 'cover.svg'
+        cover: 'cover.svg',
+        detail: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium saepe tempore molestiae.'
       },
       {
         id: 5,
         profile: 'profile1.svg',
-        cover: 'cover1.svg'
+        cover: 'cover1.svg',
+        detail: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium saepe tempore molestiae. consectetur adipisicing elit. Accusantium saepe tempore molestiae.'
       },
       {
         id: 6,
         profile: 'profile2.svg',
-        cover: 'cover2.svg'
+        cover: 'cover2.svg',
+        detail: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+      }
+    ],
+    sortOptions: [
+      {
+        id: 1,
+        title: 'A-Z'
+      },
+      {
+        id: 2,
+        title: 'Z-A'
+      },
+      {
+        id: 3,
+        title: 'Daily Volume (Low to High)'
+      },
+      {
+        id: 4,
+        title: 'Daily Volume (High to Low)'
+      },
+      {
+        id: 5,
+        title: 'Weekly Volume (Low to High)'
+      },
+      {
+        id: 6,
+        title: 'Weekly Volume (High to Low)'
+      },
+      {
+        id: 7,
+        title: 'Total Volume (Low to High)'
+      },
+      {
+        id: 8,
+        title: 'Total Volume (High to Low)'
       }
     ]
-  }),
-  methods: {
+  })
 
-  }
 }
 </script>
 
 <style scoped>
+.collection-detail {
+  display: block; /* or in-line block according to your requirement */
+  overflow: hidden;
+  /* white-space: nowrap; */
+  text-overflow: ellipsis;
+  width: calc(90%);
+  margin: 0 auto;
+}
+.gradient-btn {
+   background: -webkit-linear-gradient(#01E8DA, #0096c4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .fade-enter-active,
   .fade-leave-active {
     transition: opacity 0.2s ease-in-out;
