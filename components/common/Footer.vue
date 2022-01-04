@@ -5,7 +5,7 @@
         <div class="sm:col-span-2 col-span-1">
           <img src="@/assets/img/header/logo.svg" alt="logo" class="mt-2 mb-4">
           <div class="sm:w-1/2 w-8/12 text-sm font-thin text-white leading-5 italic">
-            Lorem ipsum, dolor sit amet adipisicing elit. Quaerat, deserunt.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </div>
         </div>
         <div class=" text-white sm:mt-0 mt-8">
@@ -35,12 +35,12 @@
               Account
             </h2>
             <ul class="flex flex-col gap-3 text-sm font-thin italic">
-              <li>Collections</li>
-              <li>Stats</li>
-              <li>Collections</li>
-              <li>Stats</li>
-              <li>Collections</li>
-              <li>Stats</li>
+              <li>Profile/Settings</li>
+              <li>Collected Items</li>
+              <li>Favorites</li>
+              <li>Followed Collections</li>
+              <li>Activity</li>
+              <li>Harmonie Rewards</li>
             </ul>
           </div>
         </div>
@@ -50,11 +50,11 @@
               Company
             </h2>
             <ul class="flex flex-col gap-3 text-sm font-thin italic">
-              <li>Collections</li>
-              <li>Stats</li>
-              <li>Collections</li>
-              <li>Stats</li>
-              <li>Stats</li>
+              <li>About Us</li>
+              <li>Privacy Policy</li>
+              <li>Cookie Policy</li>
+              <li>Terms &amp; Conditions</li>
+              <li>Contact</li>
             </ul>
           </div>
         </div>

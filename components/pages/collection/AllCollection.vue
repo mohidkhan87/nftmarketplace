@@ -37,15 +37,12 @@
             <div class="flex flex-col items-center xl:mt-16 lg:mt-10 mt-12 mb-5">
               <div class="flex flex-col items-center gap-3 text-secondary">
                 <h2 class="text-lg font-semibold">
-                  Harmoonies
+                  {{ collection.title }}
                 </h2>
-                <!-- <div v-if="collection.detail.length > 105" class="collection-detail w-11/12 mx-auto sm:mx-5 lg:mx-7 2xl:mx-20 text-center h-16  leading-5 border overflow-hidden">
-                  {{ collection.detail }}...
-                </div> -->
-                <div class="collection-detail text-center h-16  leading-5">
-                  {{ collection.detail }}
+                <div class="collection-detail text-center h-16 leading-5">
+                  {{ collection.description }}
                 </div>
-                <button class="bg-secondary hover:bg-lightBlue hover:text-secondary transition-all duration-150 ease-linear text-white rounded-md py-2.5 px-5 mt-2 sm:text-base text-sm font-medium">
+                <button class="hover:bg-secondary bg-lightBlue text-secondary transition-all duration-150 ease-linear hover:text-white rounded-md py-2.5 px-5 mt-2 sm:text-base text-sm font-medium">
                   Explore Collection
                 </button>
               </div>
@@ -81,39 +78,45 @@ export default {
     collections: [
       {
         id: 1,
+        title: 'Harmoonies',
+        description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id.',
         profile: 'profile.svg',
-        cover: 'cover.svg',
-        detail: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium saepe tempore molestiae. consectetur adipisicing elit. It an ntium saepe tempore molestiae.'
+        cover: 'cover.svg'
       },
       {
         id: 2,
+        title: 'Your Collection',
+        description: ' Et harum quidem rerum facilis est et expedita distinctio.',
         profile: 'profile1.svg',
-        cover: 'cover1.svg',
-        detail: 'Lorem ipsum dolor sit amet. Accusantium saepe tempore molestiae.'
+        cover: 'cover1.svg'
       },
       {
         id: 3,
+        title: 'Your Collection',
+        description: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.',
         profile: 'profile2.svg',
-        cover: 'cover2.svg',
-        detail: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium saepe tempore molestiae. consectetur adipisicing elit. Accusantium saepe tempore molestiae.'
+        cover: 'cover2.svg'
       },
       {
         id: 4,
+        title: 'Your Collection',
+        description: ' Et harum quidem rerum facilis est et expedita distinctio.',
         profile: 'profile.svg',
-        cover: 'cover.svg',
-        detail: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium saepe tempore molestiae.'
+        cover: 'cover.svg'
       },
       {
         id: 5,
+        title: 'Space buddy',
+        description: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.',
         profile: 'profile1.svg',
-        cover: 'cover1.svg',
-        detail: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium saepe tempore molestiae. consectetur adipisicing elit. Accusantium saepe tempore molestiae.'
+        cover: 'cover1.svg'
       },
       {
         id: 6,
+        title: 'Harmoonies',
+        description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id.',
         profile: 'profile2.svg',
-        cover: 'cover2.svg',
-        detail: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+        cover: 'cover2.svg'
       }
     ],
     sortOptions: [
